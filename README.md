@@ -3,7 +3,7 @@ This is a Github Action that creates executables for Linux, MacOS and Windows on
 
 I've created this myself because searching on the web I couldn't find a similar solution. I hope this can be useful to someone else.
 
-Feel free to contribute to this project by opening an issue or a pull request. If you find it useful please leave a :star: star :blush: .
+Feel free to contribute to this project by opening an issue or a pull request. If you find it useful please leave a :star: :blush: .
 
 ## :bulb: How it works
 ### Create release
