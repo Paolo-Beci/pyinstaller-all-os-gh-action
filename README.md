@@ -12,7 +12,7 @@ Initially, we establish that the specified tasks should execute upon each push e
 To prepare for the following tasks, we'll be uploading files as assets to the recently generated release on GitHub. This process requires utilizing a specific URL location. This is accomplished in the initial step, which retrieves this location by accessing the content of the environment variable steps.create_release.outputs.upload_url and subsequently writes it to the file release_url.txt. Finally, we upload this text file, once more employing a pre-defined action, thereby enabling us to extract the URL from it at a later stage.
 
 ### Build
-Next, we look at the build job. This is only run after 'createrelease' has finished. Here, it gets a little bit more tricky. Inside our strategy part, we define three different “versions” of a step. The first one will be run on MacOS. It will execute pyinstaller to build the MacOS package of our script. The second one will be run on a Windows machine and again use pyinstaller to create the Windows .exe version of the app. And the last one will be run on a Linux machine to create the Linux version.
+Next, we look at the build job. This is only run after `createrelease` has finished. Here, it gets a little bit more tricky. Inside our strategy part, we define three different “versions” of a step. The first one will be run on MacOS. It will execute pyinstaller to build the MacOS package of our script. The second one will be run on a Windows machine and again use pyinstaller to create the Windows .exe version of the app. And the last one will be run on a Linux machine to create the Linux version.
 ```yml
 - os: macos-latest
     TARGET: macos
@@ -42,7 +42,7 @@ After defining this strategy, the following steps are run:
 
 ## :interrobang: How to use
 ### Create the correct directory structure
-Create on the root directory a folder called '.github' and inside it another folder called 'workflows'. Inside the 'workflows' folder create a file called 'build.yml' with the content you can find on this repository.
+Create on the root directory a folder called `.github` and inside it another folder called `workflows`. Inside the `workflows` folder create a file called `build.yml` with the content you can find on this repository.
 ```bash
 mkdir -p .github/workflows/
 touch .github/workflows/build.yml
@@ -51,14 +51,14 @@ touch .github/workflows/build.yml
 ### Replace the placeholders on the build.yml file
 Replace the placeholders with your own values.
 ```txt
-APP_NAME -> 'your_app_name'
-main.py -> 'your_main_file.py'
+APP_NAME -> "your_app_name"
+main.py -> "your_main_file.py"
 ```
-Remember to check the correctness of the Python version you wnat to use and the proper existence of the 'requirements.txt' file.
+Remember to check the correctness of the Python version you wnat to use and the proper existence of the `requirements.txt` file.
 
 ### Push the release
 Create a new push to Github with the following tag convention and the action will start automatically.
-Replace '1.0' with your version.
+Replace `1.0` with your version.
 ```bash
 git add .         
 git commit -m "v1.0"  
