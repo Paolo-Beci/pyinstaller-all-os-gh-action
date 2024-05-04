@@ -62,7 +62,7 @@ Replace `1.0` with your version.
 ```bash
 git add .         
 git commit -m "v1.0"  
-git git tag -a v1.0 -m "Version 1.0"           
+git tag -a v1.0 -m "Version 1.0"           
 git push origin master --tags   
 ```      
 Remember that tags are unique, so you can't use the same tag twice (ideally you should improve the version ex: v1.0 -> v1.1 -> ...).
